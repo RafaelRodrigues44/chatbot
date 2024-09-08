@@ -108,8 +108,7 @@ class Chatbot:
                     llm_response = self.query_llm(prompt)
                     return (
                         f"{final_text}\n\nAqui você confere mais detalhes sobre a opção escolhida:\n\n"
-                        f"{llm_response}\n\nGostaria de consultar mais alguma coisa?\n"
-                        "1. Sim\n2. Não"
+                        f"{llm_response}\n\n"
                     ), True
             else:
                 return "Opção inválida. Por favor, escolha uma opção válida.", False
@@ -158,17 +157,22 @@ class Chatbot:
             print("\n" + "="*30)
             print(response)
             print("="*30)
-            
+
             if ask_to_continue:
-                user_input = input("Digite sua escolha: ")
-                if normalize_input(user_input) == "1" or normalize_input(user_input) == "sim":
-                    continue
-                elif normalize_input(user_input) == "2" or normalize_input(user_input) == "não":
-                    print("\nAgradecemos por usar o chatbot! Até a próxima!")
-                    sys.exit(0) 
+                user_input = input("Deseja continuar? (1 para Sim / 2 para Não): ")
+                normalized_input = normalize_input(user_input)
+
+                match normalized_input:
+                    case "1" | "sim":
+                        continue
+                    case "2" | "não" | "nao":
+                        print("\nAgradecemos por usar o chatbot! Até a próxima!")
+                        break
+                    case _:
+                        print("Opção inválida. Tente novamente.")
             elif response.startswith("Encerrando"):
-                print("\nAgradecemos por usar o chatbot! Até a próxima!")
-                sys.exit(0)  
+                print("\nAgradecemos por usar o chatbot! Até a próxima!\n\n")
+                break
 
 if __name__ == "__main__":
     chatbot = Chatbot()
