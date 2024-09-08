@@ -1,6 +1,6 @@
 # Projeto Chatbot com Árvore de Decisão
 
-Este projeto é um chatbot baseado em árvore de decisão com processamento de texto avançado, utilizando técnicas de NLP (Processamento de Linguagem Natural) para fornecer respostas detalhadas sobre Python. A estrutura do chatbot permite navegação através de menus e submenus dinâmicos, enquanto o processamento de texto inclui normalização, tokenização, correção ortográfica e lematização.
+Este projeto é um chatbot baseado em árvore de decisão com processamento de texto avançado, utilizando técnicas de NLP (Processamento de Linguagem Natural) para fornecer respostas mais detalhadas sobre Python. A estrutura do chatbot permite navegação através de menus e submenus dinâmicos, enquanto o processamento de texto inclui normalização, tokenização, correção ortográfica e lematização. Após retornar uma cnsulta fixa pela árvore de decisão, esse texto é convertido em um prompt de entrada para ser enviado a um LLM (simples e gratuito) para simular o uso de uma ferramenta de IA para uma resposta aumentada. 
 
 ## Estrutura do Projeto
 
@@ -109,10 +109,10 @@ Para configurar o ambiente e instalar as dependências, siga os passos abaixo:
 
 ## Uso
 
-1. **Inicialize o Chatbot**: Execute o script `main.py` para iniciar o chatbot.
+1. **Inicialize o Chatbot**: Execute o script `chatbot.py` a partir da pasta raiz para iniciar o chatbot.
 
     ```bash
-    python main.py
+    python chatbot.py
     ```
 
 2. **Interaja com o Chatbot**: Envie mensagens para o chatbot e navegue pelos menus e submenus.
