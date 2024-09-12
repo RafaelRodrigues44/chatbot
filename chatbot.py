@@ -126,7 +126,7 @@ class Chatbot:
         """
         model_id = "EleutherAI/gpt-neo-2.7B"
         url = f"https://api-inference.huggingface.co/models/{model_id}"
-        headers = {"Authorization": "Bearer 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"}
+        headers = {"Authorization": "Bearer <SUA_CHAVE_API_AQUI>"}
         data = {"inputs": prompt, "parameters": {"max_length": max_tokens, "temperature": 0.5}}
 
         try:
