@@ -45,12 +45,12 @@ graph TD
 
 ```mermaid
 graph TD
-    A[Recepção da Mensagem] --> B[Processamento da Mensagem]
+    A[Recepção da Mensagem] --> B[Processamento]
     B --> C[Normalização]
     B --> D[Tokenização]
     B --> E[Correção Ortográfica]
     B --> F[Lematização]
-    C --> G[Consulta à Árvore de Decisão]
+    C --> G[Consulta]
     D --> G
     E --> G
     F --> G
